@@ -43,6 +43,8 @@ public class AppTest {
 
 	WebElement menuopt=driver.findElement(By.xpath("//a[(@title='Browse All Recruiters')]"));
 	menuopt.click();
+	
+	System.out.println("test execution completed");
 		
  } 
 	
