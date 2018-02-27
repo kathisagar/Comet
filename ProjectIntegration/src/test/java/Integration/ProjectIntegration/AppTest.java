@@ -15,9 +15,7 @@ public class AppTest {
 
 	public static void  print() throws InterruptedException{
 		
-		
-
-		System.setProperty("webdriver.ie.driver", "C:\\Eclipse\\IEDriverServer.exe");
+/*		System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
 		DesiredCapabilities capabilities=DesiredCapabilities.internetExplorer();
 		capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		capabilities.setCapability("requireWindowFocus", true);
@@ -29,7 +27,11 @@ public class AppTest {
 		driver.findElement(By.className("loginButton")).click();
 		driver.manage().window().maximize();
 	
-		driver.close();
+		driver.close();*/
+		
+		
+		System.out.println("Testing with Jenkins");
+		
  } 
 	
   
