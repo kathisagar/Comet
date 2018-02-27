@@ -16,36 +16,20 @@ public class AppTest {
 	public static void  print() throws InterruptedException{
 		
 		
-		 System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
-		DesiredCapabilities cap=DesiredCapabilities.internetExplorer();
-		cap.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-		cap.setCapability("requirewindowfocus", true);
-		WebDriver driver=new InternetExplorerDriver(cap);
-		
-		
-		driver.get("https://www.naukri.com/");
-		Thread.sleep(3000);
-		WebElement menu=driver.findElement(By.xpath("html/body/div[2]/div/ul/li[2]/a/div"));
-				
-	
-		//to right click on object
-		Actions builder = new Actions(driver); 
-		builder.contextClick(menu).build().perform();
-		
-		//to move to particular object and control stays on object
-		
-		Actions builder1=new Actions(driver);
-		builder1.moveToElement(menu).build().perform();
-		
-			
-		WebDriverWait option=new WebDriverWait(driver,20);
-		option.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[(@title='Browse All Recruiters')]")));
 
-	WebElement menuopt=driver.findElement(By.xpath("//a[(@title='Browse All Recruiters')]"));
-	menuopt.click();
-	
-	System.out.println("test execution completed");
+		System.setProperty("webdriver.ie.driver", "C:\\Eclipse\\IEDriverServer.exe");
+		DesiredCapabilities capabilities=DesiredCapabilities.internetExplorer();
+		capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+		capabilities.setCapability("requireWindowFocus", true);
+		WebDriver driver = new InternetExplorerDriver(capabilities);
 		
+		driver.get("http://apsrt3981.uhc.com:8080/prweb/PRServlet");
+		driver.findElement(By.id("txtUserID")).sendKeys("cometwfa");
+		driver.findElement(By.id("txtPassword")).sendKeys("rules");
+		driver.findElement(By.className("loginButton")).click();
+		driver.manage().window().maximize();
+	
+		driver.close();
  } 
 	
   
