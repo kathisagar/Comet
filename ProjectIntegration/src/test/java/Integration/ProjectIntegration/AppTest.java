@@ -36,6 +36,7 @@ public class AppTest {
 		driver.manage().window().maximize();
 	
 		driver.close();
+		driver.quit();
 		
 		
 		System.out.println("Testing with Jenkins");
