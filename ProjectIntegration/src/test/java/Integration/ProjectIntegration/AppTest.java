@@ -19,12 +19,19 @@ public class AppTest {
 
 	public static void  print() throws InterruptedException, MalformedURLException{
 		
-		DesiredCapabilities capabilities = DesiredCapabilities.firefox();              
+		/*DesiredCapabilities capabilities = DesiredCapabilities.firefox();              
 		capabilities.setCapability("platform", "Windows 7");               
 		capabilities.setCapability("version", "45"); 
 		capabilities.setCapability("idleTimeout", 180);  
-		capabilities.setCapability("requireWindowFocus", true);
+		capabilities.setCapability("requireWindowFocus", true);*/
 
+		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();             
+		capabilities.setCapability("platform", "Windows 7");               
+		capabilities.setCapability("version", "11"); 
+		capabilities.setCapability("idleTimeout", 180);  
+		capabilities.setCapability("requireWindowFocus", true);
+		/*capabilities.setCapability("screenResolution" , "1280x800");*/
+		
 		WebDriver driver = new RemoteWebDriver(
 		new URL("http://"+System.getenv("SAUCE_USERNAME")+":"+System.getenv("SAUCE_ACCESS_KEY")+"@ondemand.saucelabs.com:80/wd/hub"),
 		capabilities);
@@ -39,7 +46,7 @@ public class AppTest {
 		driver.quit();
 		
 		
-		System.out.println("Testing with Jenkins");
+		/*System.out.println("Testing with Jenkins");*/
 		
  } 
 	
